@@ -1,0 +1,91 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#select").change(function () {
+                if ($(this).val() == 1) {
+                    $(".daay").hide();
+                    $(".hours").show();
+                }
+                else {
+                    $(".daay").show();
+                    $(".hours").hide();
+                }
+            })
+
+        })
+
+
+    </script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form action="Index" method="post">
+        <label>First Name</label>
+        <input type="text" name="fname" />
+        <br />
+
+        <label>Last Name</label>
+        <input type="text" name="lname" />
+        <br />
+
+        <label>Email</label>
+        <input type="text" name="email" />
+        <br />
+
+        <label>Hours</label>
+        <select id="select">
+            <option value="1">Hourly</option>
+            <option value="2">Dayly</option>
+        </select>
+        <br />
+        <div class="hours">
+            <label>Hours</label>
+            <input type="text" name="Hours" />
+        </div>
+        <br />
+        <div class="daay">
+            <label>Days</label>
+            <input type="text" name="Days" />
+
+        </div>
+        <br />
+        <label>phone</label>
+        <input type="text" name="phone" />
+        <br />
+
+        <label>Gender</label>
+        <input type="radio" name="male1"/>Male
+        <input type="radio" name="fmale1"/>Female
+        <br />
+
+        <div class="hours">
+            <label>Hour price</label>
+            <input type="text" name="texthoueprice" />
+        </div>
+        <br />
+
+        <div class="daay">
+            <label> Day price</label>
+            <input type="text" name="Day price" />
+
+        </div>
+        <br />
+        <input type="submit" value="save" name="save" />
+
+        <div>
+            <span>@ViewData["maseg"]</span>
+        </div>
+
+    </form>
+</body>
+</html>
